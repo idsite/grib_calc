@@ -94,18 +94,18 @@ export default {
       subs: [
         {
           name: 'Опилки',
-          hum: 25,
-          weight: 5400
+          hum: 24,
+          weight: 5700
         },
         {
           name: 'Отруби',
-          hum: 5,
-          weight: 1400
+          hum: 11,
+          weight: 1300
         },
         {
           name: 'Гипс',
-          hum: 4,
-          weight: 350
+          hum: 5,
+          weight: 300
         }
       ]
     }
