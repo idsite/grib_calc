@@ -205,6 +205,10 @@ export default {
       &>div {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
+        .v-input {
+          min-width: 80px;
+        }
         &>* {
           margin-right: 10px;
           &:last-child {
