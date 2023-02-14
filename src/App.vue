@@ -1,18 +1,27 @@
 <template>
   <div class="calc-page">
+        <v-alert style="margin-bottom: 25px"
+      border="start"
+      border-color="deep-purple accent-4"
+      elevation="2"
+    >
+     <p>Вес указывается в граммах и результат в граммах.</p>
+     <p> Что бы удалить компонент из расчета, нужно указать вес 0</p>
+    </v-alert>
+
     <div class="calc">
       <div class="calc-page__items-sub items-sub">
         <div class="items-sub__item" v-for="(item, i) in subs" :key="i">
           <v-text-field
-              label="Name"
+              label="Компонент"
               v-model="item.name"
           ></v-text-field>
           <v-text-field
-              label="Weight"
+              label="Вес г"
               v-model="item.weight"
           ></v-text-field>
           <v-text-field
-              label="Humidity %"
+              label="Влажнось %"
               v-model="item.hum"
           ></v-text-field>
           <div class="items-sub__item-precent">
@@ -41,7 +50,7 @@
               Общая масса сухих компонентов
             </th>
             <td class="text-left">
-              {{ totalWeight }}
+              {{ totalWeight }} г.
             </td>
           </tr>
           <tr>
@@ -49,7 +58,7 @@
               Масса воды которую нужно добавить
             </th>
             <td class="text-left">
-              {{ waterWeight }}
+              {{ waterWeight }} г.
             </td>
           </tr>
           <tr>
@@ -65,7 +74,7 @@
                 <v-icon @click="isEditWeight = false">mdi-content-save-check-outline</v-icon>
               </div>
               <div v-else>
-                <span>{{ waterWeight+totalWeight }}</span>
+                <span>{{ waterWeight+totalWeight }}  г.</span>
                 <v-icon  @click="isEditWeight = true"    start
                          icon="mdi-pencil" ></v-icon>
               </div>
